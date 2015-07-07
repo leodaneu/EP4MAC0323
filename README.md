@@ -52,13 +52,15 @@ result:
 Grafos dirigidos a partir de arquivos XML de OSM
 ------------------------------------------------
 
-The coding of streets are in OSM maps, where are we export to XML files. For that, we use a already-built program, written in Python.
+The coding of streets are in OSM maps, where we export to XML files. For that, we use a already-built program, written in Python.
 
 Install NetworkX:
 
 http://networkx.github.io
 
 And download **gistfile1.py**
+
+Here, how to install networkx: http://networkx.github.io/documentation/latest/install.html
 
 using xmltoadj.py to USP.adjlist
 --------------------------------
