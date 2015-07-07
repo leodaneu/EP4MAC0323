@@ -11,6 +11,11 @@ where ``<node id> <latitude> <longitude>``
 
 (this link helps with the convertion http://wiki.openstreetmap.org/wiki/OSM_XML)
 
+| .format	| similarity	  	|
+|:-------:|:---------------:|
+| .vll		| similar a .txt	|
+| .xml		| similar a .html	|
+
 Plot nodes
 ----------
 
