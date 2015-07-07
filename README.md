@@ -58,9 +58,11 @@ Install NetworkX:
 
 http://networkx.github.io
 
-And download **gistfile1.py**
+(how to install: http://networkx.github.io/documentation/latest/install.html)
 
-Here, how to install networkx: http://networkx.github.io/documentation/latest/install.html
+(you will need **setuptools** 18.0.1: https://pypi.python.org/pypi/setuptools)
+
+And download **gistfile1.py**
 
 using xmltoadj.py to USP.adjlist
 --------------------------------
