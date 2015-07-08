@@ -90,7 +90,7 @@ Before program execution
 
 * Usuario escolhe o mapa e exporta ele, como map-osm.xml;
 
-* Usuario executa **xmltoadj.py **. Exemplo: ``$ python xmltoadj.py map.osm-USP.xml USP.adjlist``;
+* Usuario executa **xmltoadj.py**. Exemplo: ``$ python xmltoadj.py map.osm-USP.xml USP.adjlist``;
 
 * Usuario executa o **EP4.java** program, com inputs: map-osm.xml e G.adjlist.
 
