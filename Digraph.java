@@ -135,12 +135,6 @@ public class Digraph {
     }
 
 
-    // throw an IndexOutOfBoundsException unless 0 <= v < V
-    private void validateVertex(int v) {
-        if (v < 0 || v >= V)
-            throw new IndexOutOfBoundsException("vertex " + v + " is not between 0 and " + (V-1));
-    }
-
     /**
      * Adds the directed edge v->w to the digraph.
      * @param v the tail vertex
@@ -148,8 +142,8 @@ public class Digraph {
      * @throws java.lang.IndexOutOfBoundsException unless both 0 <= v < V and 0 <= w < V
      */
     public void addEdge(int v, int w) {
-        validateVertex(v);
-        validateVertex(w);
+        if (v < 0 || v >= V) throw new IndexOutOfBoundsException("vertex " + v + " is not between 0 and " + (V-1));
+        if (w < 0 || w >= V) throw new IndexOutOfBoundsException("vertex " + w + " is not between 0 and " + (V-1));
         adj[v].add(w);
         E++;
     }
@@ -161,20 +155,8 @@ public class Digraph {
      * @throws java.lang.IndexOutOfBoundsException unless 0 <= v < V
      */
     public Iterable<Integer> adj(int v) {
-        validateVertex(v);
+        if (v < 0 || v >= V) throw new IndexOutOfBoundsException();
         return adj[v];
-    }
-
-    /**
-     * Returns the number of directed edges incident from vertex <tt>v</tt>.
-     * This is known as the <em>outdegree</em> of vertex <tt>v</tt>.
-     * @return the outdegree of vertex <tt>v</tt>               
-     * @param v the vertex
-     * @throws java.lang.IndexOutOfBoundsException unless 0 <= v < V
-     */
-    public int outdegree(int v) {
-        validateVertex(v);
-        return adj[v].size();
     }
 
     /**
