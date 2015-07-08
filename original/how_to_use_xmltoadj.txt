@@ -1,0 +1,1 @@
+$ python xmltoadj.py map.osm-USP.xml USP.adjlist
