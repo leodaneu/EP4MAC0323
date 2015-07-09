@@ -22,15 +22,20 @@ public class EP4 {
         double x1 = -46.72;
         double y1 = -23.55;
 
-        StdDraw.setXscale(x0, x1);
-        StdDraw.setYscale(y0, y1);
+        //StdDraw.setXscale(x0, x1);
+        //StdDraw.setYscale(y0, y1);
+        //Location localizacao = geo.st.get(s);
+        StdOut.println(geo.findMax() + ", " + geo.findMin());
 
+/*
+        double lat_ant, longt_ant;
         for (String s : geo.st.keys()) {
             Location localizacao = geo.st.get(s);
             StdDraw.point(localizacao.longitude, localizacao.latitude);
+            StdDraw.line(x, y, localizacao.longitude, localizacao.latitude);
             //StdOut.println( localizacao.latitude );
         }
-
+*/
 /*
         while (1) {
             StdOut.println("Entre com os dois pares de pontos para o enquadramento da imagem:");
