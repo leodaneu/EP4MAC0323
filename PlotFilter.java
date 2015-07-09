@@ -75,6 +75,9 @@ public class PlotFilter {
             // StdDraw.show(0);
         }
     
+    while(1) {
+        
+    }
 
     }
 }
