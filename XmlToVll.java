@@ -1,6 +1,6 @@
 /*************************************************************************
  *  Compilation:  javac XmlToVll.java
- *  Execution:    java PXmlToVll input.osm.xml > output.vll
+ *  Execution:    java XmlToVll input.osm.xml > output.vll
  *  
  *  % java XmlToVll map.osm.xml > USP.vll
  *
