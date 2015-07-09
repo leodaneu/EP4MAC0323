@@ -125,12 +125,14 @@ public class SymbolDigraph {
      * Unit tests the <tt>SymbolDigraph</tt> data type.
      */
     public static void main(String[] args) {
+        In in = new In(args[0]); 
         String filename  = args[0];
         String delimiter = args[1];
         SymbolDigraph sg = new SymbolDigraph(filename, delimiter);
         Digraph G = sg.G();
-        while (!StdIn.isEmpty()) {
-            String t = StdIn.readLine();
+        while (!in.isEmpty()) {
+            String t = in.readString();
+            StdOut.println(t);
             for (int v : G.adj(sg.index(t))) {
                 StdOut.println("   " + sg.name(v));
             }
