@@ -40,6 +40,14 @@ public class Location {
         double statuteMiles = STATUTE_MILES_PER_NAUTICAL_MILE * nauticalMiles;
         return statuteMiles;
     }
+    
+    // critério de comparação para a implementação de Comparable.
+    public int compareTo(Locaion that) {
+        if (this.latitude < that.latitude && this.longitude < that.longitude) return -1;
+        if (this.latitude > that.latitude && this.longitude > that.longitude) return 1;
+        else return  0;
+    }
+
 
     // return string representation of this point
     public String toString() {
