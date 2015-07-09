@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class GeoInfo {
     
-    ST<String, Location> st;     // Tabela de símbolos 
+    private ST<String, Location> st;     // Tabela de símbolos 
 
     public GeoInfo() {           // construtor
         ST<String, Location> st = new ST<String, Location>();
@@ -29,7 +29,7 @@ public class GeoInfo {
                         String lat      = tokens[9].replaceAll("[a-z|=|\"]+", "");
                         String longt    = tokens[10].replaceAll("[a-z|=|\"|/|>]+", "");
                         
-                        Location loc = new Location(Double.parseTo(lat), Double.parseTo(longt));
+                        Location loc = new Location(Double.parseDouble(lat), Double.parseDouble(longt));
                         st.put(node, loc);
                         
                     }
