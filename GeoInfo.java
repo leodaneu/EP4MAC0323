@@ -5,10 +5,10 @@ import java.util.Arrays;
 
 public class GeoInfo {
     
-    private ST<String, Location> st;     // Tabela de símbolos 
+    public ST<String, Location> st;     // Tabela de símbolos 
 
     public GeoInfo() {           // construtor
-        ST<String, Location> st = new ST<String, Location>();
+        st = new ST<String, Location>();
     }
 
     public void runScript(String fileToParse, ST<String, Location> st) {
@@ -31,7 +31,6 @@ public class GeoInfo {
                         
                         Location loc = new Location(Double.parseDouble(lat), Double.parseDouble(longt));
                         st.put(node, loc);
-                        
                     }
                 }
             }

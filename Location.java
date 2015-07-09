@@ -12,8 +12,8 @@
  *************************************************************************/
 
 public class Location { 
-    private double longitude;
-    private double latitude;   
+    public double longitude;
+    public double latitude;   
    
     // create and initialize a point with given name and
     // (latitude, longitude) specified in degrees
@@ -47,6 +47,7 @@ public class Location {
     }
 
 
+    /*
     // test client
     public static void main(String[] args) {
         Location loc1 = new Location("PRINCETON_NJ", 40.366633, 74.640832);
@@ -55,4 +56,5 @@ public class Location {
         System.out.printf("%6.3f miles from\n", distance);
         System.out.println(loc1 + " to " + loc2);
     }
+    */
 }
