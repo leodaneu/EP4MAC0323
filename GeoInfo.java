@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class GeoInfo {
     
-    private ST<String, Location> st;     // Tabela de símbolos 
+    public ST<String, Location> st;     // Tabela de símbolos 
 
     public GeoInfo() {                   // construtor
         st = new ST<String, Location>();
