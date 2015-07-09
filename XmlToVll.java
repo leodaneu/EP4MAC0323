@@ -16,7 +16,7 @@ import java.util.Arrays;
 
 public class XmlToVll { 
 
-    public void runScript(String fileToParse) {
+    public void runScript(String fileToParse, ST<String, Location> st) {
         BufferedReader fileReader = null;
         try
         {
@@ -30,11 +30,13 @@ public class XmlToVll {
                 if (tokens.length > 1) {
 
                     if (tokens[1].equals("<node")) {
-                        String node     = tokens[2].replaceAll("[a-z|=|\"]+", "");
+                        String node     = tokens[2].replaceAll("[a-z|=|\"]+", "");;
                         String lat      = tokens[9].replaceAll("[a-z|=|\"]+", "");
                         String longt    = tokens[10].replaceAll("[a-z|=|\"|/|>]+", "");
+                        Location loc = new Location(Double.parseDouble(lat), Double.parseDouble(longt));
+                        st.put(node, loc);
                         
-                        StdOut.println( node + " " + lat + " " + longt );
+                        // StdOut.println( node + " " + lat + " " + longt );
                     }
                 }
             }
