@@ -16,9 +16,7 @@ import java.util.Arrays;
 
 public class XmlToVll { 
 
-    public static void main(String[] args) {
-
-        String fileToParse = args[0];
+    public void runScript(String fileToParse) {
         BufferedReader fileReader = null;
         try
         {
@@ -52,5 +50,12 @@ public class XmlToVll {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static void main(String[] args) {
+
+        String fileToParse = args[0];
+        runScript(fileToParse);
+        
     }
 }
