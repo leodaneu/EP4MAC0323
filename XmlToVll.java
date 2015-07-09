@@ -14,7 +14,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class XmlToVll { 
+public class XmlToVll {
 
     public void runScript(String fileToParse, ST<String, Location> st) {
         BufferedReader fileReader = null;
