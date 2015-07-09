@@ -12,14 +12,12 @@
  *************************************************************************/
 
 public class Location { 
-    private String name;
     private double longitude;
     private double latitude;   
    
     // create and initialize a point with given name and
     // (latitude, longitude) specified in degrees
-    public Location(String name, double latitude, double longitude) {
-        this.name = name;
+    public Location(double latitude, double longitude) {
         this.latitude  = latitude;
         this.longitude = longitude;
     }
@@ -45,7 +43,7 @@ public class Location {
 
     // return string representation of this point
     public String toString() {
-        return name + " (" + latitude + ", " + longitude + ")";
+        return " (" + latitude + ", " + longitude + ")";
     }
 
 
