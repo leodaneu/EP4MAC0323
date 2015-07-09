@@ -5,11 +5,29 @@ import java.util.Arrays;
 
 public class GeoInfo {
     
-    public ST<String, Location> st;     // Tabela de símbolos 
+    private ST<String, Location> st;     // Tabela de símbolos 
 
-    public GeoInfo() {           // construtor
+    public GeoInfo() {                   // construtor
         st = new ST<String, Location>();
     }
+
+    public Location findMin(ST<String, Location> st) {
+        Location loc = new Location(0, 0);
+        
+        for (String aux: st.keys()) {
+            if (loc < st.get(aux)) loc = st.get(aux);
+        }
+        return loc;
+    }    
+
+    public Location findMax(ST<String, Location> st) {
+        Location loc = new Location(0, 0);
+        
+        for (String aux: st.keys()) {
+            if (loc > st.get(aux)) loc = st.get(aux);
+        }
+        return loc;
+    }    
 
     public void runScript(String fileToParse, ST<String, Location> st) {
         BufferedReader fileReader = null;
@@ -25,12 +43,13 @@ public class GeoInfo {
                 if (tokens.length > 1) {
 
                     if (tokens[1].equals("<node")) {
-                        String node     = tokens[2].replaceAll("[a-z|=|\"]+", "");;
+                        String node     = tokens[2].replaceAll("[a-z|=|\"]+", "");
                         String lat      = tokens[9].replaceAll("[a-z|=|\"]+", "");
                         String longt    = tokens[10].replaceAll("[a-z|=|\"|/|>]+", "");
                         
                         Location loc = new Location(Double.parseDouble(lat), Double.parseDouble(longt));
                         st.put(node, loc);
+                        
                     }
                 }
             }
@@ -48,9 +67,4 @@ public class GeoInfo {
         }
     }
     
-    //public static void main(String[] args) {
-    //    ST<> st
-    //    String fileToParse = args[0];
-    //    runScript(fileToParse, st);
-    //}    
 }
