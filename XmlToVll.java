@@ -30,7 +30,7 @@ public class XmlToVll {
                 if (tokens.length > 1) {
 
                     if (tokens[1].equals("<node")) {
-                        String node     = tokens[2].replaceAll("[a-z|=|\"]+", "");;
+                        String node     = tokens[2].replaceAll("[a-z|=|\"]+", "");
                         String lat      = tokens[9].replaceAll("[a-z|=|\"]+", "");
                         String longt    = tokens[10].replaceAll("[a-z|=|\"|/|>]+", "");
                         
