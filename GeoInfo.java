@@ -1,3 +1,11 @@
+/*************************************************************************
+ *  
+ *  GeoInfo.java monta uma tabela de simbolos a partir de um arquivo .xml
+ *  criando implicitamente um formato .vll
+ *  E calcula-se os minimos e maximos da latitude e longitude
+ *
+ *************************************************************************/
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,16 +18,8 @@ public class GeoInfo {
     public GeoInfo() {                   // construtor
         st = new ST<String, Location>();
     }
-/*
-    public Location findMin(ST<String, Location> st) {
-        Location loc = new Location(0, 0);
-        
-        for (String aux: st.keys()) {
-            if (loc < st.get(aux)) loc = st.get(aux);
-        }
-        return loc;
-    }    
-*/
+
+    // seguintes methods calculam os minimos e maximos da latitude e longitude
     public Double findMinLat(ST<String, Location> st) {
         Location loc_ant = new Location(90, 180);
         
@@ -60,17 +60,6 @@ public class GeoInfo {
         return loc_ant.longitude;
     }  
 
-
-/*
-    public Location findMax(ST<String, Location> st) {
-        Location loc = new Location(0, 0);
-        
-        for (String aux: st.keys()) {
-            if (loc > st.get(aux)) loc = st.get(aux);
-        }
-        return loc;
-    }    
-*/
     public void runScript(String fileToParse, ST<String, Location> st) {
         BufferedReader fileReader = null;
         try
