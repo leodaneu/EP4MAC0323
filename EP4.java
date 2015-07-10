@@ -17,10 +17,10 @@ public class EP4 {
         symbolGeo.geoInfo.runScript(args[0], geo.st);
 
         // impressao do mapa inteiro
-        double y0 = symbolGeo.geoInfo.findMinLat(geo.st);
-        double x0 = symbolGeo.geoInfo.findMinLongt(geo.st);       
-        double y1 = symbolGeo.geoInfo.findMaxLat(geo.st);
-        double x1 = symbolGeo.geoInfo.findMaxLongt(geo.st);
+        double y0 = symbolGeo.geoInfo.findMinLat(symbolGeo.geoInfo.st);
+        double x0 = symbolGeo.geoInfo.findMinLongt(symbolGeo.geoInfo.st);       
+        double y1 = symbolGeo.geoInfo.findMaxLat(symbolGeo.geoInfo.st);
+        double x1 = symbolGeo.geoInfo.findMaxLongt(symbolGeo.geoInfo.st);
 
         if ( (x1 - x0) > (y1 - y0) ) {
             y1 = y0 + (x1 - x0);
@@ -35,7 +35,7 @@ public class EP4 {
         StdDraw.setYscale(y0, y1);
 
         //double lat_ant, longt_ant;
-        for (String s : geo.st.keys()) {
+        for (String s : symbolGeo.geoInfo.st.keys()) {
             Location localizacao = symbolGeo.geoInfo.st.get(s);
             StdDraw.point(localizacao.longitude, localizacao.latitude);
             //StdDraw.line(x, y, localizacao.longitude, localizacao.latitude);
@@ -57,7 +57,7 @@ public class EP4 {
             StdDraw.setXscale(x0, x1);
             StdDraw.setYscale(y0, y1);
 
-            for (String s : geo.st.keys()) {
+            for (String s : symbolGeo.geoInfo.st.keys()) {
                 Location localizacao = symbolGeo.geoInfo.st.get(s);
                 StdDraw.point(localizacao.longitude, localizacao.latitude);
                 //StdDraw.line(x, y, localizacao.longitude, localizacao.latitude);
