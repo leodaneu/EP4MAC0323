@@ -16,41 +16,56 @@ public class EP4 {
         GeoInfo geo = new GeoInfo();
         geo.runScript(args[0], geo.st);
 
-        // set min and max to first image
-        double x0 = -46.74;
-        double y0 = -23.57;
-        double x1 = -46.72;
-        double y1 = -23.55;
+        // impressao do mapa inteiro
+        double y0 = geo.findMinLat(geo.st);
+        double x0 = geo.findMinLongt(geo.st);       
+        double y1 = geo.findMaxLat(geo.st);
+        double x1 = geo.findMaxLongt(geo.st);
 
-        //StdDraw.setXscale(x0, x1);
-        //StdDraw.setYscale(y0, y1);
-        //Location localizacao = geo.st.get(s);
-        StdOut.println(geo.findMax() + ", " + geo.findMin());
+        if ( (x1 - x0) > (y1 - y0) ) {
+            y1 = y0 + ()
+        }
+        //StdOut.println(x1 - x0);
+        // impressao em janela
+        StdDraw.setXscale(x0, x1);
+        StdDraw.setYscale(y0, y1);
 
-/*
-        double lat_ant, longt_ant;
+        //double lat_ant, longt_ant;
         for (String s : geo.st.keys()) {
             Location localizacao = geo.st.get(s);
             StdDraw.point(localizacao.longitude, localizacao.latitude);
-            StdDraw.line(x, y, localizacao.longitude, localizacao.latitude);
+            //StdDraw.line(x, y, localizacao.longitude, localizacao.latitude);
             //StdOut.println( localizacao.latitude );
         }
-*/
 /*
-        while (1) {
+
+*/
+        while (true) {
             StdOut.println("Entre com os dois pares de pontos para o enquadramento da imagem:");
             StdOut.println("Formato requerido: latitude longitude (entre com o par separado por um espaço)");
             StdOut.println("Entre com o primeiro ponto >> ");
-            double x0 = StdIn.readDouble();
-            double y0 = StdIn.readDouble();
+            x0 = StdIn.readDouble(); y0 = StdIn.readDouble();
             StdOut.println("Entre com o segundo ponto >> ");
-            double x1 = StdIn.readDouble();
-            double y1 = StdIn.readDouble();
+            x1 = StdIn.readDouble(); y1 = StdIn.readDouble();
+
+            StdDraw.clear();
+            // impressao em janela
+            StdDraw.setXscale(x0, x1);
+            StdDraw.setYscale(y0, y1);
+
+            for (String s : geo.st.keys()) {
+                Location localizacao = geo.st.get(s);
+                StdDraw.point(localizacao.longitude, localizacao.latitude);
+                //StdDraw.line(x, y, localizacao.longitude, localizacao.latitude);
+                //StdOut.println( localizacao.latitude );
+            }
         }
 
+
+/*
+        
         for (String s : geo.st.keys())
             StdOut.println(s + " " + geo.st.get(s));
-
 */
 
         // read in bounding box and rescale
