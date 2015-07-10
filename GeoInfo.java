@@ -10,7 +10,7 @@ public class GeoInfo {
     public GeoInfo() {                   // construtor
         st = new ST<String, Location>();
     }
-
+/*
     public Location findMin(ST<String, Location> st) {
         Location loc = new Location(0, 0);
         
@@ -19,7 +19,49 @@ public class GeoInfo {
         }
         return loc;
     }    
+*/
+    public Double findMinLat(ST<String, Location> st) {
+        Location loc_ant = new Location(90, 180);
+        
+        for (String aux: st.keys()) {
+            Location loc_prox = st.get(aux);
+            if (loc_ant.latitude > loc_prox.latitude) loc_ant = st.get(aux);
+        }
+        return loc_ant.latitude;
+    }  
 
+    public Double findMinLongt(ST<String, Location> st) {
+        Location loc_ant = new Location(90, 180);
+        
+        for (String aux: st.keys()) {
+            Location loc_prox = st.get(aux);
+            if (loc_ant.longitude > loc_prox.longitude) loc_ant = st.get(aux);
+        }
+        return loc_ant.longitude;
+    }  
+
+    public Double findMaxLat(ST<String, Location> st) {
+        Location loc_ant = new Location(-90, -180);
+        
+        for (String aux: st.keys()) {
+            Location loc_prox = st.get(aux);
+            if (loc_ant.latitude < loc_prox.latitude) loc_ant = st.get(aux);
+        }
+        return loc_ant.latitude;
+    }  
+
+    public Double findMaxLongt(ST<String, Location> st) {
+        Location loc_ant = new Location(-90, -180);
+        
+        for (String aux: st.keys()) {
+            Location loc_prox = st.get(aux);
+            if (loc_ant.longitude < loc_prox.longitude) loc_ant = st.get(aux);
+        }
+        return loc_ant.longitude;
+    }  
+
+
+/*
     public Location findMax(ST<String, Location> st) {
         Location loc = new Location(0, 0);
         
@@ -28,7 +70,7 @@ public class GeoInfo {
         }
         return loc;
     }    
-
+*/
     public void runScript(String fileToParse, ST<String, Location> st) {
         BufferedReader fileReader = null;
         try
