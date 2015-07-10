@@ -23,8 +23,12 @@ public class EP4 {
         double x1 = geo.findMaxLongt(geo.st);
 
         if ( (x1 - x0) > (y1 - y0) ) {
-            y1 = y0 + ()
+            y1 = y0 + (x1 - x0);
         }
+        else {
+            x1 = x0 + (y1 - y0);
+        }
+        
         //StdOut.println(x1 - x0);
         // impressao em janela
         StdDraw.setXscale(x0, x1);
